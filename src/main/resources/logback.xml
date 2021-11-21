@@ -1,7 +1,8 @@
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern> [ %highlight(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %cyan(%logger{15})] [mt: %M] | %m%n</pattern>
+            <charset>UTF-8</charset>
+            <pattern> [ %highlight(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %cyan(%logger{0})] [method: %M] | %m%n</pattern>
         </encoder>
     </appender>
 
@@ -10,8 +11,9 @@
         <file>${LOG_FILE}.log</file>
         <append>true</append>
         <encoder>
+            <charset>UTF-8</charset>
             <!-- TODO: Доделать нормальный паттерн -->
-            <pattern>[ %highlight(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %cyan(%logger{15})] [mt: %M] | %m%n</pattern>
+            <pattern>[ %(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %logger{0}] [method: %M] %m%n</pattern>
         </encoder>
     </appender>
 

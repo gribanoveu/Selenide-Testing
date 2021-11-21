@@ -4,10 +4,11 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import config.webdriver.DriverFactory;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-@Log4j2
+@Slf4j
 abstract public class BaseTest {
 
     String env = System.getProperty("browser", "chrome").toLowerCase();
