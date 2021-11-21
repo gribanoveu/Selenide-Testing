@@ -24,6 +24,7 @@
         <webdrivermanager.version>5.0.2</webdrivermanager.version>
         <assertj.version>3.21.0</assertj.version>
         <log4j.version>2.14.1</log4j.version>
+        <logback.version>1.2.7</logback.version>
         <lombok.version>1.18.22</lombok.version>
     </properties>
 
@@ -66,6 +67,12 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
