@@ -21,6 +21,7 @@
         <!-- DEPENDENCIES -->
         <testng.version>7.4.0</testng.version>
         <selenide.version>6.0.3</selenide.version>
+        <webdrivermanager.version>5.0.2</webdrivermanager.version>
         <assertj.version>3.21.0</assertj.version>
         <log4j.version>2.14.1</log4j.version>
         <lombok.version>1.18.22</lombok.version>
@@ -59,6 +60,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
