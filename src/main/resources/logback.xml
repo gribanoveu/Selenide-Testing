@@ -6,13 +6,13 @@
         </encoder>
     </appender>
 
-    <property name="LOG_FILE" value="LogFile" />
+
+    <timestamp key="byDate" datePattern="dd.MM.yy"/>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender" additivity="false">
-        <file>${LOG_FILE}.log</file>
-        <append>true</append>
+        <file>temp/logs/${byDate}/testLogs_${byDate}.log</file>
+        <append>true</append>>
         <encoder>
             <charset>UTF-8</charset>
-            <!-- TODO: Доделать нормальный паттерн -->
             <pattern>[ %(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %logger{0}] [method: %M] %m%n</pattern>
         </encoder>
     </appender>

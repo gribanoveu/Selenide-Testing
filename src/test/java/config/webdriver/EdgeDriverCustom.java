@@ -4,22 +4,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-public class ChromeDriverCustom {
-    public static WebDriver getChromeDriver() {
+public class EdgeDriverCustom {
+    public static WebDriver getEdgeDriver() {
+        WebDriverManager.edgedriver().setup();
 
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
+        EdgeOptions options = new EdgeOptions();
         options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
         options.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, PageLoadStrategy.NORMAL);
         options.addArguments("--incognito");
         options.addArguments("--start-fullscreen");
-        options.merge(options);
 
-        return new ChromeDriver(options);
+        return new EdgeDriver(options);
     }
 }

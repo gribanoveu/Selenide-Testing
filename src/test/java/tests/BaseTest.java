@@ -16,13 +16,13 @@ abstract public class BaseTest {
     @BeforeClass
     public void setUp() {
         WebDriverRunner.setWebDriver(DriverFactory.getDriver(env));
-        log.info("start");
+        log.info("Start browser: " + env);
     }
 
     @AfterClass
     public void tearDown() {
         Selenide.closeWebDriver();
-        log.info("stop");
+        log.info("Browser stop");
     }
 
 }

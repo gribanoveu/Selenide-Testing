@@ -22,8 +22,6 @@
         <testng.version>7.4.0</testng.version>
         <selenide.version>6.0.3</selenide.version>
         <webdrivermanager.version>5.0.2</webdrivermanager.version>
-        <assertj.version>3.21.0</assertj.version>
-        <log4j.version>2.14.1</log4j.version>
         <logback.version>1.2.7</logback.version>
         <lombok.version>1.18.22</lombok.version>
     </properties>
@@ -40,22 +38,6 @@
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
