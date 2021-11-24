@@ -94,6 +94,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/TestSuites/ChromeTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/TestSuites/EdgeTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/TestSuites/FirefoxTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <systemProperties>
