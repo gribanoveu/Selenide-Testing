@@ -1,4 +1,4 @@
-package config.webdriver;
+package webdriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
@@ -18,6 +18,7 @@ public class ChromeDriverCustom {
         options.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, PageLoadStrategy.NORMAL);
         options.addArguments("--incognito");
         options.addArguments("--start-fullscreen");
+        options.addArguments("--headless");
         options.merge(options);
 
         return new ChromeDriver(options);

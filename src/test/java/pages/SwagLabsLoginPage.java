@@ -22,4 +22,11 @@ public class SwagLabsLoginPage {
         loginButton.click();
     }
 
+    public static void otherLogin(String user, String password) {
+        open(URL);
+        $(By.id("user-name")).setValue(user);
+        $(By.id("password")).setValue(password);
+        $(By.id("login-button")).click();
+    }
+
 }

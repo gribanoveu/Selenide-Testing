@@ -9,7 +9,7 @@
 
     <timestamp key="byDate" datePattern="dd.MM.yy"/>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender" additivity="false">
-        <file>temp/logs/${byDate}/testLogs_${byDate}.log</file>
+        <file>build/reports/logs/${byDate}/testLogs_${byDate}.log</file>
         <append>true</append>>
         <encoder>
             <charset>UTF-8</charset>

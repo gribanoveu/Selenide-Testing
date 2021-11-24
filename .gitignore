@@ -2,6 +2,7 @@
 .idea/
 /target
 .allure
+/build
 
 # File-based project format
 *.iws
