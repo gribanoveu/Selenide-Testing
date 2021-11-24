@@ -10,4 +10,4 @@
 </suite>
 
 <!-- parallel (false | true | none | methods | tests | classes | instances) "none" -->
-<!-- enabled      flag to enable/disable current test. Default value: true -->
+<!-- enabled  flag to enable/disable current test. Default value: true -->

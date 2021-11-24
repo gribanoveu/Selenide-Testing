@@ -89,6 +89,8 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <!-- тестовые наборы по умолчанию для запуска из mvn clean test -->
+                    <!-- или mvn clean test -DsuiteXmlFile=EdgeTestSuite.xml -->
+                    <!-- при mvn clean test запускаются все указанные наборы -->
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/TestSuites/ChromeTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/TestSuites/EdgeTestSuite.xml</suiteXmlFile>
