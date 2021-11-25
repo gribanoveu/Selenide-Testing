@@ -1,14 +1,24 @@
 ## Тестовый набор 
 
+### Тестовые наборы для запуска через mvn clean test указываюся в pom.xml
+    все прописанные наборы запускаются вы вызове команды mvn test
+    для запуска конкретного набора тестов используется команда mvn clean test -DsuiteXmlFile=НазваниеНабораТестов.xml
+    наборы тестов располагаются в дирректории src/test/resources/testSuites
+
 ### Набор тестов выглядит следующим образом:
 
+    !!! Параметр browser используется для указания запуска конкретного браузера
+    данный параметр используется в BaseTest
+    по умолчанию тесты запускаются в chrome (параметр @Optional в BaseTest)
+
+    testng.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
     <suite name="Pool" parallel="tests">
         <test name="1" thread-count="3" parallel="methods">
-            <parameter name="browser" value="edge"/>
+            <parameter name="browser" value="edge"/> 
             <classes>
-                <class name="tests.FirstTest"/>
+                <class name="tests.cases.FirstTest"/>
             </classes>
         </test>
     </suite>

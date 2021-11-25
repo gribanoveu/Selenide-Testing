@@ -4,7 +4,7 @@
     <test name="chrome" parallel="classes" thread-count="3">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.FirstTest"/>
+            <class name="tests.cases.FirstTest"/>
         </classes>
     </test>
 </suite>

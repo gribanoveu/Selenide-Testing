@@ -1,4 +1,4 @@
-package tests;
+package tests.cases;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Selenide;
@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import pages.SwagLabsCatalogPage;
 import pages.SwagLabsLoginPage;
 import pages.SwagLabsShoppingCardPage;
+import tests.BaseTest;
+import tests.data.TestDataClass;
 
 public class FirstTest extends BaseTest {
 
