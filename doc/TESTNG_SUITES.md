@@ -11,6 +11,9 @@
     данный параметр используется в BaseTest
     по умолчанию тесты запускаются в chrome (параметр @Optional в BaseTest)
 
+    Параллельный запуск тестов
+    parallel (false | true | none | methods | tests | classes | instances) "none" 
+
     testng.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -54,6 +57,7 @@
                             в XML-файле.
 
     @attr allow-return-values Если true, тесты, возвращающие значение, также будут выполняться.
+
 
 
 ### Включение и исключение тестов:
