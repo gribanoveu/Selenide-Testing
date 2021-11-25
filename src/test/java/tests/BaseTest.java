@@ -21,7 +21,6 @@ abstract public class BaseTest {
     protected static MainConfig config = ConfigFactory.create(MainConfig.class);
     static String screenshotsFolder = config.allure_screenshots_folder();
 
-
     // браузер указывается из тестового набора testng.xml
     // тестовые наборы по умолчанию прописаны в pom
     @Parameters({"browser"})
