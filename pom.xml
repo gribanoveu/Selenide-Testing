@@ -27,7 +27,7 @@
         <allure.version>2.16.1</allure.version>
         <aspectj.version>1.9.7</aspectj.version>
         <allure-testng.version>2.16.1</allure-testng.version>
-        <owner-api.version>1.0.10</owner-api.version>
+        <owner-api.version>1.0.12</owner-api.version>
     </properties>
 
     <dependencies>
@@ -99,9 +99,9 @@
                     <!-- или mvn clean test -DsuiteXmlFile=EdgeTestSuite.xml -->
                     <!-- при mvn clean test запускаются все указанные наборы -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/TestSuites/ChromeTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/TestSuites/EdgeTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/TestSuites/FirefoxTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/ChromeTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/EdgeTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/FirefoxTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <allure.results.directory>build/reports/allure-results</allure.results.directory>
