@@ -16,6 +16,7 @@ public class FirstTest extends BaseTest {
         SwagLabsCatalogPage.inventoryItemLabel.shouldHave(CollectionCondition.sizeGreaterThanOrEqual(6));
     }
 
+    @Attachment(value = "Page screenshot", type = "image/png")
     @Test(dataProvider = "test-data-users", dataProviderClass = TestDataClass.class)
     public void addTshirtToShoppingCard(String userName, String userPassword) {
         SwagLabsLoginPage.login(userName, userPassword);
