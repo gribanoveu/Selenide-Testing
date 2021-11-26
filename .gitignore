@@ -2,7 +2,6 @@
 .idea/
 /target
 .allure
-/build
 
 # File-based project format
 *.iws
@@ -31,3 +30,5 @@ atlassian-ide-plugin.xml
 *.zip
 *.tar.gz
 *.rar
+/build/*
+/build/allure-results/
