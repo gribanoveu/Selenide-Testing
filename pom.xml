@@ -18,6 +18,10 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
 
+        <!-- TESTNG  -->
+        <!-- Указанный файл запускается автоматически при mvn clean test  -->
+        <suiteXml>ChromeTestSuite.xml</suiteXml>
+
         <!-- DEPENDENCIES -->
         <testng.version>7.4.0</testng.version>
         <selenide.version>6.0.3</selenide.version>
@@ -96,12 +100,11 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <!-- тестовые наборы по умолчанию для запуска из mvn clean test -->
-                    <!-- или mvn clean test -DsuiteXmlFile=EdgeTestSuite.xml -->
                     <!-- при mvn clean test запускаются все указанные наборы -->
+                    <!-- для указания конкретного набора mvn clean test -DsuiteXml=EdgeTestSuite  -->
+                    <!-- ! без указания .xml -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suites/ChromeTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/suites/EdgeTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/suites/FirefoxTestSuite.xml</suiteXmlFile>
+                        <suiteXml>src/test/resources/suites/${suiteXml}.xml</suiteXml>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <allure.results.directory>build/reports/allure-results</allure.results.directory>
