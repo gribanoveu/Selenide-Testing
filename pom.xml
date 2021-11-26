@@ -20,7 +20,7 @@
 
         <!-- TESTNG  -->
         <!-- Указанный файл запускается автоматически при mvn clean test  -->
-        <suiteXml>ChromeTestSuite.xml</suiteXml>
+        <suiteXml>ChromeTestSuite</suiteXml>
 
         <!-- DEPENDENCIES -->
         <testng.version>7.4.0</testng.version>
@@ -107,7 +107,7 @@
                         <suiteXml>src/test/resources/suites/${suiteXml}.xml</suiteXml>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <allure.results.directory>build/reports/allure-results</allure.results.directory>
+                        <allure.results.directory>temp/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                 </configuration>
