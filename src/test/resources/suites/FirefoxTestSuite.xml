@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Pool" parallel="tests">
     <test name="firefox" parallel="classes" thread-count="3">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browsers" value="firefox"/>
         <classes>
             <class name="tests.cases.FirstTest"/>
         </classes>
