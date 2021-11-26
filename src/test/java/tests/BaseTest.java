@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterClass;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import webdriver.DriverHelper;
 
@@ -11,10 +12,10 @@ import webdriver.DriverHelper;
 @Slf4j
 abstract public class BaseTest {
 
-
+    @Parameters({"browserName"})
     @BeforeClass
-    public void setUp() {
-        DriverHelper.configureDriver();
+    public void setUp(@Optional("chrome") String browserName) {
+        DriverHelper.configureDriver(browserName);
     }
 
     @AfterClass

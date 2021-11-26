@@ -107,7 +107,7 @@
                         <suiteXml>src/test/resources/suites/${suiteXml}.xml</suiteXml>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <allure.results.directory>temp/allure-results</allure.results.directory>
+                        <allure.results.directory>build/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                 </configuration>
