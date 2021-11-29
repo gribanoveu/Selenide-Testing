@@ -112,6 +112,10 @@
                     </suiteXmlFiles>
                     <systemProperties>
                         <property>
+                            <name>selenide.downloadsFolder</name>
+                            <value>target/downloads</value>
+                        </property>
+                        <property>
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
                         </property>

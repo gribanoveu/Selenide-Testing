@@ -1,6 +1,7 @@
 package webdriver;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import common.DriverConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,10 @@ public class DriverHelper {
     }
 
     public static void configureDriver(String browserName) {
-        addListener("AllureSelenide", new AllureSelenide());
+        addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true));
+
         getDriver(browserName.toLowerCase());
         Configuration.driverManagerEnabled = true;
         Configuration.reportsFolder = getDriverConfig().allureScreenshotsFolder();
