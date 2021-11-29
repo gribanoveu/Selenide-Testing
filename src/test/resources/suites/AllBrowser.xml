@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Suites">
+    <suite-files>
+        <suite-file path="ChromeTestSuite.xml" />
+        <suite-file path="EdgeTestSuite.xml" />
+        <suite-file path="FirefoxTestSuite.xml" />
+    </suite-files>
+</suite>

@@ -8,6 +8,8 @@ import pages.SwagLabsShoppingCardPage;
 import tests.BaseTest;
 import tests.data.TestDataClass;
 
+import java.io.IOException;
+
 public class FirstTest extends BaseTest {
 
     @Test(dataProvider = "test-data-users", dataProviderClass = TestDataClass.class)
@@ -16,10 +18,12 @@ public class FirstTest extends BaseTest {
         SwagLabsCatalogPage.inventoryItemLabel.shouldHave(CollectionCondition.sizeGreaterThanOrEqual(6));
     }
 
+
     @Test(dataProvider = "test-data-users", dataProviderClass = TestDataClass.class)
-    public void addTshirtToShoppingCard(String userName, String userPassword) {
+    public void addTshirtToShoppingCard(String userName, String userPassword) throws IOException {
         SwagLabsLoginPage.login(userName, userPassword);
         SwagLabsCatalogPage.addTshirtAndBackpackToShoppingCard();
+        takeScreenshot();
         SwagLabsCatalogPage.openShoppingCard();
         SwagLabsShoppingCardPage.cardItems.shouldHave(CollectionCondition.size(2));
     }

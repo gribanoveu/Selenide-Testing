@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -15,6 +16,7 @@ public class SwagLabsLoginPage {
             passwordField = $(By.id("password")),
             loginButton = $(By.id("login-button"));
 
+    @Step
     public static void login(String userName, String password) {
         open(URL);
         userNameField.setValue(userName);

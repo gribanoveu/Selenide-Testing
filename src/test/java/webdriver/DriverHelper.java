@@ -6,7 +6,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
 import org.aeonbits.owner.ConfigFactory;
 
-
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 @Slf4j

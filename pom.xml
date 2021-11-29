@@ -23,14 +23,17 @@
         <suiteXml>ChromeTestSuite</suiteXml>
 
         <!-- DEPENDENCIES -->
+        <!-- tests -->
         <testng.version>7.4.0</testng.version>
-        <selenide.version>6.0.3</selenide.version>
-        <webdrivermanager.version>5.0.2</webdrivermanager.version>
+        <selenide.version>6.1.1</selenide.version>
+        <webdrivermanager.version>5.0.3</webdrivermanager.version>
+        <!-- logs -->
         <logback.version>1.2.7</logback.version>
-        <lombok.version>1.18.22</lombok.version>
         <allure.version>2.16.1</allure.version>
         <aspectj.version>1.9.7</aspectj.version>
         <allure-testng.version>2.16.1</allure-testng.version>
+        <!-- utilities -->
+        <lombok.version>1.18.22</lombok.version>
         <owner-api.version>1.0.12</owner-api.version>
     </properties>
 
@@ -99,6 +102,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <testFailureIgnore>false</testFailureIgnore>
                     <!-- тестовые наборы по умолчанию для запуска из mvn clean test -->
                     <!-- при mvn clean test запускаются все указанные наборы -->
                     <!-- для указания конкретного набора mvn clean test -DsuiteXml=EdgeTestSuite  -->
@@ -106,9 +110,12 @@
                     <suiteXmlFiles>
                         <suiteXml>src/test/resources/suites/${suiteXml}.xml</suiteXml>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <allure.results.directory>build/allure-results</allure.results.directory>
-                    </systemPropertyVariables>
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                    </systemProperties>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                 </configuration>
                 <dependencies>
@@ -123,6 +130,9 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
+                <configuration>
+                    <resultsDirectory>allure-results</resultsDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>

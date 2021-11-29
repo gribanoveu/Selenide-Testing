@@ -2,10 +2,11 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class SwagLabsCatalogPage {
 
@@ -18,11 +19,13 @@ public class SwagLabsCatalogPage {
             shoppingCardButton = $(By.id("shopping_cart_container"));
 
 
+    @Step
     public static void addTshirtAndBackpackToShoppingCard() {
         tShirt.click();
         backpack.click();
     }
 
+    @Step
     public static void openShoppingCard() {
         shoppingCardButton.click();
     }
