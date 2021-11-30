@@ -28,6 +28,7 @@ abstract public class BaseTest {
     @BeforeClass
     public void setUp(@Optional("chrome") String browserName) {
         DriverHelper.configureDriver(browserName);
+        // сохранять скриншот при успешном тесте в папку target
         ScreenShooter.captureSuccessfulTests = Boolean.parseBoolean(getDriverConfig().captureSuccessfulTests());
     }
 

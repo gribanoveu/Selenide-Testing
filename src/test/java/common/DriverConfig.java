@@ -16,4 +16,10 @@ public interface DriverConfig extends Config {
 
     @Key("captureSuccessfulTests")
     String captureSuccessfulTests();
+
+    @Key("remoteUrl")
+    String selenoidRemoteUrl();
+
+    @Key("runSelenoid")
+    String runSelenoid();
 }
