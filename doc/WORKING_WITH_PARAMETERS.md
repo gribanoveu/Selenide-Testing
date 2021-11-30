@@ -21,6 +21,12 @@
 
     protected static MainConfig config = ConfigFactory.create(MainConfig.class);
     String **screenshotsFolder** = config._allure_screenshots_folder_();
+    
+    или добавить в класс
+
+    private static DriverConfig getDriverConfig() {
+        return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
+    }
 
     - Подставить параметр
     Configuration.reportsFolder = **screenshotsFolder**;

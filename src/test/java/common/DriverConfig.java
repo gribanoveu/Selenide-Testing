@@ -6,11 +6,14 @@ import org.aeonbits.owner.Config;
 public interface DriverConfig extends Config {
 
     @Key("reportsFolder")
-    String allureScreenshotsFolder();
+    String reportsFolder();
 
     @Key("browserSize")
     String browserSize();
 
     @Key("headless")
     String headlessMode();
+
+    @Key("captureSuccessfulTests")
+    String captureSuccessfulTests();
 }

@@ -2,14 +2,13 @@ package tests;
 
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.testng.ScreenShooter;
 import com.google.common.io.Files;
+import common.DriverConfig;
 import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.aeonbits.owner.ConfigFactory;
+import org.testng.annotations.*;
 import webdriver.DriverHelper;
 
 import java.io.File;
@@ -17,16 +16,21 @@ import java.io.IOException;
 
 
 @Slf4j
+@Listeners({ ScreenShooter.class})
 abstract public class BaseTest {
 
+    // получение свойств из класса DriverConfig
+    private static DriverConfig getDriverConfig() {
+        return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
+    }
+
     @Parameters({"browserName"})
-    @Description("ЗАПУСК БРАУЗЕРА")
     @BeforeClass
     public void setUp(@Optional("chrome") String browserName) {
         DriverHelper.configureDriver(browserName);
+        ScreenShooter.captureSuccessfulTests = Boolean.parseBoolean(getDriverConfig().captureSuccessfulTests());
     }
 
-    @Description("ЗАКРЫТИЕ БРАУЗЕРА")
     @AfterClass
     public void tearDown() {
         Selenide.closeWebDriver();
