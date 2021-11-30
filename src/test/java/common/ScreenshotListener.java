@@ -21,6 +21,7 @@ public class ScreenshotListener implements ITestListener {
     public void onTestSuccess(ITestResult result) {
     }
 
+    // при падении теста в аллюр добавляется скриншот
     @SneakyThrows
     @Override
     public void onTestFailure(ITestResult result) {

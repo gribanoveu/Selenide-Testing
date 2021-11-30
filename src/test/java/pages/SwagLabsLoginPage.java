@@ -2,33 +2,30 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Slf4j
 public class SwagLabsLoginPage {
 
     private static final String URL = "https://www.saucedemo.com/";
 
-    public static SelenideElement
-            userNameField = $(By.id("user-name")),
-            passwordField = $(By.id("password")),
-            loginButton = $(By.id("login-button"));
-
     @Step
-    public static void login(String userName, String password) {
+    public static void login(String user, String password) {
         open(URL);
-        userNameField.setValue(userName);
-        passwordField.setValue(password);
-        loginButton.click();
-    }
+        log.info("Открыт URL: " + URL);
 
-    public static void otherLogin(String user, String password) {
-        open(URL);
         $(By.id("user-name")).setValue(user);
+        log.info("Введен логин в поле: " + user);
+
         $(By.id("password")).setValue(password);
+        log.info("Введен пароль в поле: " + password);
+
         $(By.id("login-button")).click();
+        log.info("Нажата клавиша Логин");
     }
 
 }

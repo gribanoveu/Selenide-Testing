@@ -24,7 +24,6 @@ abstract public class BaseTest {
         return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
     }
 
-    
     @Parameters({"browserName"})
     @BeforeClass
     public void setUp(@Optional("chrome") String browserName) {
