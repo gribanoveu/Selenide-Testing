@@ -24,6 +24,7 @@ abstract public class BaseTest {
         return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
     }
 
+    
     @Parameters({"browserName"})
     @BeforeClass
     public void setUp(@Optional("chrome") String browserName) {
@@ -37,6 +38,7 @@ abstract public class BaseTest {
         log.info("Browser stop");
     }
 
+    // Для прикрепления скриншота к шагу в отчет allure
     @Attachment(type = "image/png")
     public byte[] takeScreenshot() throws IOException {
         File screenshot = Screenshots.takeScreenShotAsFile();
