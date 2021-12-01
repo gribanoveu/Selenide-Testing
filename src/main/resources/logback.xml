@@ -1,4 +1,5 @@
 <configuration>
+    <timestamp key="bySecond" datePattern="dd.MM.yy_HH.mm"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern> [ %highlight(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %logger{0}] [method: %M] | %yellow(%m%n)</pattern>
@@ -8,8 +9,8 @@
 
     <timestamp key="byDate" datePattern="dd.MM.yy"/>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender" additivity="false">
-        <file>logs/${byDate}/testLogs_${byDate}.log</file>
-        <append>true</append>>
+        <file>logs/${byDate}/log_${bySecond}.log</file>
+        <append>true</append>
         <encoder>
             <charset>UTF-8</charset>
             <pattern>[ %(%-5level)] %d{dd.MM.yy - HH:mm:ss} [%thread] [class: %logger{0}] [method: %M] %m%n</pattern>
