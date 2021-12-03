@@ -2,12 +2,9 @@ package webdriver;
 
 import com.codeborne.selenide.Configuration;
 import common.DriverConfig;
-import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 @Slf4j
 public class DriverHelper  {
@@ -27,7 +24,6 @@ public class DriverHelper  {
 
     // настройка драйвера
     public static void configureDriver(String browserName) {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = browserName;
         Configuration.browserSize = getDriverConfig().browserSize();
         Configuration.driverManagerEnabled = true;

@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
@@ -13,7 +12,7 @@ public class SwagLabsLoginPage {
 
     private static final String URL = "https://www.saucedemo.com/";
 
-    @Step
+    @Step("Логин")
     public static void login(String user, String password) {
         open(URL);
         log.info("Открыт URL: " + URL);
