@@ -1,6 +1,7 @@
 package tests.cases;
 
 import com.codeborne.selenide.CollectionCondition;
+import common.Attachments;
 import org.testng.annotations.Test;
 import pages.SwagLabsCatalogPage;
 import pages.SwagLabsLoginPage;
@@ -8,7 +9,6 @@ import pages.SwagLabsShoppingCardPage;
 import tests.BaseTest;
 import tests.data.TestDataClass;
 
-import java.io.IOException;
 
 public class FirstTest extends BaseTest {
 
@@ -20,10 +20,10 @@ public class FirstTest extends BaseTest {
 
 
     @Test(dataProvider = "test-data-users", dataProviderClass = TestDataClass.class)
-    public void addTshirtToShoppingCard(String userName, String userPassword) throws IOException {
+    public void addTshirtToShoppingCard(String userName, String userPassword) {
         SwagLabsLoginPage.login(userName, userPassword);
         SwagLabsCatalogPage.addTshirtAndBackpackToShoppingCard();
-        takeScreenshot();
+        Attachments.attachScreenshot("page");
         SwagLabsCatalogPage.openShoppingCard();
         SwagLabsShoppingCardPage.cardItems.shouldHave(CollectionCondition.size(2));
     }
