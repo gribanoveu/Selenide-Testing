@@ -6,10 +6,10 @@ Selenide + TestNG + Allure + Logback + Selenoid support
         | - main/resources/logback.xml - конфигурация логгера
         | - test/
                 | java/
-                | - common/ - вспомогательные файлы проекта
-                | - pages/ - обьекты страницы с шагами тестового сценария
-                | - webdriver/ - настройка selenide
-                | - tests/
+                    | - common/ - вспомогательные файлы проекта
+                    | - pages/ - обьекты страницы с шагами тестового сценария
+                    | - webdriver/ - настройка selenide
+                    | - tests/
                         | - cases/ - тестовые сценарии
                         | - data/ - поставщик данных для тестовых сценариев
                 | resources/
