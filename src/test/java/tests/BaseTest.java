@@ -1,9 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideConfig;
-import com.codeborne.selenide.SelenideDriver;
-import com.codeborne.selenide.logevents.SelenideLog;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.selenide.testng.ScreenShooter;
 import common.DriverConfig;
