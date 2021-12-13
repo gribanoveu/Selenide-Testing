@@ -1,7 +1,7 @@
 ## Selenoid
 
-### Для запуска тестов через селеноид в докер контейнере:
-    Установить Docker desctop app
+### Для запуска тестов через селеноид в докер контейнере (Windows):
+    Установить Docker desktop app
     установить wsl 2
     скачать selenoid https://github.com/aerokube/cm/releases
     запустить selenoid 
