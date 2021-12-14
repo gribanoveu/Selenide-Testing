@@ -1,25 +1,17 @@
-package webdriver;
+package driver;
 
 import com.codeborne.selenide.Configuration;
-import common.DriverConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import util.DriverConfig;
 
 @Slf4j
-public class DriverHelper  {
+public class DriverInstance {
 
     // получение свойств из класса DriverConfig
     private static DriverConfig getDriverConfig() {
         return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
-    }
-
-    private static void runSelenoid() {
-        Configuration.remote = getDriverConfig().selenoidRemoteUrl();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
     }
 
     // настройка драйвера
@@ -38,4 +30,11 @@ public class DriverHelper  {
         }
     }
 
+    private static void runSelenoid() {
+        Configuration.remote = getDriverConfig().selenoidRemoteUrl();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+    }
 }

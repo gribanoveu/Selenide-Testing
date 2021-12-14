@@ -8,7 +8,7 @@ Selenide + TestNG + Allure + Logback + Selenoid support
                 | java/
                     | - common/ - вспомогательные файлы проекта
                     | - pages/ - обьекты страницы с шагами тестового сценария
-                    | - webdriver/ - настройка selenide
+                    | - driver/ - настройка selenide
                     | - tests/
                         | - cases/ - тестовые сценарии
                         | - data/ - поставщик данных для тестовых сценариев
