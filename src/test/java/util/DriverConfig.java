@@ -22,4 +22,7 @@ public interface DriverConfig extends Config {
 
     @Key("runSelenoid")
     String runSelenoid();
+
+    @Key("runSeleniumGrid")
+    String runSeleniumGrid();
 }
