@@ -24,18 +24,19 @@
 
         <!-- DEPENDENCIES -->
         <!-- tests -->
-        <testng.version>7.4.0</testng.version>
-        <selenide.version>6.1.1</selenide.version>
-        <selenide-testng.version>6.0.3</selenide-testng.version>
+        <testng.version>7.5</testng.version>
+        <selenide.version>6.2.1</selenide.version>
+        <selenide-testng.version>6.2.1</selenide-testng.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <!-- logs -->
-        <logback.version>1.2.7</logback.version>
-        <allure.version>2.16.1</allure.version>
+        <logback.version>1.2.10</logback.version>
+        <allure.version>2.17.2</allure.version>
         <aspectj.version>1.9.7</aspectj.version>
-        <allure-testng.version>2.16.1</allure-testng.version>
+        <allure-testng.version>2.17.2</allure-testng.version>
         <!-- utilities -->
         <lombok.version>1.18.22</lombok.version>
         <owner-api.version>1.0.12</owner-api.version>
+        <commons-io.version>2.11.0</commons-io.version>
     </properties>
 
     <dependencies>
@@ -77,7 +78,7 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
-            <scope>compile</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.aeonbits.owner</groupId>
@@ -89,6 +90,11 @@
             <artifactId>selenide-testng</artifactId>
             <version>${selenide-testng.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
     </dependencies>
 

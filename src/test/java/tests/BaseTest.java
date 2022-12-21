@@ -3,12 +3,12 @@ package tests;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.selenide.testng.ScreenShooter;
-import common.DriverConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
 import org.aeonbits.owner.ConfigFactory;
 import org.testng.annotations.*;
-import webdriver.DriverHelper;
+import util.DriverConfig;
+import driver.DriverInstance;
 
 
 @Slf4j
@@ -23,7 +23,7 @@ abstract public class BaseTest {
     @Parameters({"browserName"})
     @BeforeClass
     public void setUp(@Optional("chrome") String browserName) {
-        DriverHelper.configureDriver(browserName);
+        DriverInstance.configureDriver(browserName);
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         ScreenShooter.captureSuccessfulTests = Boolean.parseBoolean(getDriverConfig().captureSuccessfulTests());
     }
